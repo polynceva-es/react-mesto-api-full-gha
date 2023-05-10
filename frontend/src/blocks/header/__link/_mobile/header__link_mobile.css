@@ -1,0 +1,16 @@
+.header__link_mobile {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #A9A9A9;
+    margin-bottom: 39px;
+  }
+
+  @media screen and (min-width: 530px) {
+    .header__link_mobile {
+      display: none;
+    }
+  }

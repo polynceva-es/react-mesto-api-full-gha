@@ -1,0 +1,30 @@
+.header__nav-icon {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header__nav-icon::after,
+.header__nav-icon::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.header__nav-icon::after {
+    top: 9px;
+}
+
+.header__nav-icon::before {
+    bottom: 9px;
+}

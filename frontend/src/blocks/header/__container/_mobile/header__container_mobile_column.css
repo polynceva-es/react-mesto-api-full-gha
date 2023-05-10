@@ -1,0 +1,13 @@
+.header__container_mobile_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid rgb(84, 84, 84, 0.7);
+    width: 100%;
+}
+
+@media screen and (min-width: 530px) {
+    .header__container_mobile_column {
+        display: none;
+    }
+}

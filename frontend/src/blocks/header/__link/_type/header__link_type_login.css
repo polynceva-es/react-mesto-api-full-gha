@@ -1,0 +1,15 @@
+.header__link_type_login {
+    color: #A9A9A9;
+}
+
+/* @media screen and (max-width: 530px) {
+   .header__link_type_login {
+    margin-bottom: 40px;
+   } 
+} */
+
+@media screen and (max-width: 530px) {
+    .header__link_type_login {
+     display: none;
+    } 
+ }

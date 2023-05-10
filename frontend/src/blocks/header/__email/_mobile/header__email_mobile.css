@@ -1,0 +1,16 @@
+.header__email_mobile {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: #FFFFFF;
+    margin: 50px 0 18px 0;
+}
+
+@media screen and (min-width: 530px) {
+    .header__email_mobile {
+        display: none;
+    }
+}

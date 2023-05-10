@@ -1,0 +1,6 @@
+.header__container_desctop_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}

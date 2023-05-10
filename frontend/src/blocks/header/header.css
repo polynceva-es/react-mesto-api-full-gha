@@ -1,0 +1,9 @@
+.header {
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(84, 84, 84, 0.7);
+  min-height: 74px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,11 @@
+.form__title_theme-dark {
+    margin: 0 0 47px 0;
+    color: #000000;  
+  }
+  @media screen and (max-width: 530px) {
+    .form__title_theme-dark {
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0 0 75px 0;
+    }
+  }

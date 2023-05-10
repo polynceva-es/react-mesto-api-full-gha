@@ -1,0 +1,12 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 51px;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    row-gap: 36px;
+  }
+}

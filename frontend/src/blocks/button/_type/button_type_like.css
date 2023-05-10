@@ -1,0 +1,11 @@
+.button_type_like {
+  background-image: url(../../../images/heart_disabled.svg);
+  width: 30px;
+  height: 20px;
+  align-self: center;
+  justify-self: center;
+}
+
+.button_type_like:hover {
+  opacity: 0.5;
+}

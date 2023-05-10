@@ -1,0 +1,13 @@
+.authorization__image {
+    width: 120px;
+    height: 120px;
+    margin: 26px 0 32px 0;
+}
+
+@media screen and (max-width: 530px) {
+    .authorization__image {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 26px 0 40px 0;
+    }
+  }

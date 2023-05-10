@@ -1,0 +1,14 @@
+.button_type_submit-dark {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 530px) {
+  .button_type_submit-dark {
+    width: 238px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "express-mesto-gha",
+  "version": "1.0.0",
+  "description": "[![Tests](../../actions/workflows/tests-13-sprint.yml/badge.svg)](../../actions/workflows/tests-13-sprint.yml) [![Tests](../../actions/workflows/tests-14-sprint.yml/badge.svg)](../../actions/workflows/tests-14-sprint.yml)\r # Проект Mesto фронтенд + бэкенд\r [ссылка на репозиторий](https://github.com/polynceva-es/express-mesto-gha)",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "lint": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polynceva-es/express-mesto-gha.git"
+  },
+  "keywords": [],
+  "author": "Ekaterina Polyntseva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polynceva-es/express-mesto-gha/issues"
+  },
+  "homepage": "https://github.com/polynceva-es/express-mesto-gha#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "celebrate": "^15.0.1",
+    "express": "^4.18.2",
+    "express-winston": "^4.2.0",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3",
+    "validator": "^13.9.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "nodemon": "^2.0.22"
+  }
+}

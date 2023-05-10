@@ -1,0 +1,15 @@
+.header__nav-icon_close {
+    background-color: transparent;
+}
+
+.header__nav-icon_close::after {
+    transform: rotate(45deg);
+    transition: transform 1s;
+    top: 0;
+}
+
+.header__nav-icon_close::before {
+    transform: rotate(-45deg);
+    transition: transform 1s;
+    top: 0;
+}

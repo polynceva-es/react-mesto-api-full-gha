@@ -1,0 +1,10 @@
+.form__input_theme-light {
+  color: #FFFFFF;
+  border-bottom: 2px solid #CCCCCC;;  
+}
+  
+@media screen and (max-width: 530px) {
+  .form__input_theme-light {
+    width: 260px;
+  }
+}

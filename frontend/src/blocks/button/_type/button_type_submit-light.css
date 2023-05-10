@@ -1,0 +1,22 @@
+.button_type_submit-light {
+    background:  #FFFFFF;
+    color: #000000;
+    margin-top: 188px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;     
+}
+
+
+@media screen and (max-width: 530px) {
+    .button_type_submit-light {
+      width: 260px;
+      height: 46px;
+      font-size: 16px;
+      line-height: 19px;
+      margin-top: 144px;
+    }
+  }

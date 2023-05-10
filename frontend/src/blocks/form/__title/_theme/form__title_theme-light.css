@@ -1,0 +1,13 @@
+.form__title_theme-light {
+    margin: 34px 0 47px 0;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+@media screen and (max-width: 530px) {
+    .form__title_theme-light {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 16px 0 39px 0;
+    }
+  }
