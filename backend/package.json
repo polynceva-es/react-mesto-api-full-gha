@@ -18,10 +18,11 @@
   "bugs": {
     "url": "https://github.com/polynceva-es/react-mesto-api-full-gha/issues"
   },
-   "dependencies": {
+  "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
     "celebrate": "^15.0.1",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-winston": "^4.2.0",
     "joi": "^17.9.2",

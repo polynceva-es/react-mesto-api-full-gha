@@ -8,6 +8,7 @@ import { register, login, checkToken } from "../utils/auth";
 import api from "../utils/api";
 
 function App() {
+  const [errorMessage, setErrorMessage] = React.useState('');
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [regedIn, setRegedIn] = React.useState(false);
   const [userEmail, setUserEmail] = React.useState('');
@@ -42,9 +43,8 @@ function App() {
           navigate("/", { replace: true });
         })
         .catch((err) => {
-          console.log(err)
+          console.log("Ошибка:" + err)
           localStorage.removeItem("token");
-          console.log('mesto 1')
           setLoggedIn(false);
         })
         .finally(() => setIsLoader(false));
@@ -194,16 +194,14 @@ function App() {
         navigate("/", { replace: true })
       })
       .catch((err) => {
-        err.then((e) => console.log(e.message));
-        console.log('mesto 2');
-        setLoggedIn(false)
+        err.then((e) => setErrorMessage(e.message));
+        setLoggedIn(false);
       })
       .finally(() => {
         setIsLoader(false);
         setIsInfoTooltipOpen(true)})
   }
   function signOut() {
-    console.log('mesto 3')
     setLoggedIn(false);
     setIsInfoTooltipOpen(false);
     localStorage.removeItem("token");
@@ -270,6 +268,7 @@ function App() {
               isOpen={isInfoTooltipOpen}
               onClose={closeAllPopups}
               handleCloseClickOverlay={handleCloseClickOverlay}
+              errorMessage={errorMessage}
               />}
         />
         <Route path="*" element={<div>404 Page Not found</div>} />

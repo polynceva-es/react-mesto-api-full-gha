@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { Joi } = require('celebrate');
 const http2 = require('node:http2');
 const User = require('../models/user');
-const getSecretKey = require('../utils/secretKey');
 const { joiIsUrlValid } = require('../utils/isUrlValid');
-
+const { NODE_ENV, JWT_SECRET } = process.env;
 const { HTTP_STATUS_CREATED, HTTP_STATUS_OK } = http2.constants;
 const BadRequestError = require('../errors/badRequestError');
 const NotFoundError = require('../errors/notFoundError');
@@ -99,7 +99,7 @@ module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, getSecretKey(), { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret')
       res.status(HTTP_STATUS_OK).send({ token });
     })
     .catch((err) => {

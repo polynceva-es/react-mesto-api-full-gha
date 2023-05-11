@@ -7,7 +7,7 @@ import logInFalse from "../../images/authorization_false.svg";
 
 function Login(props) {
   const { values, onChange, resetValidation, isFormValid } = useValidation();
-  const textLogInFalse = "Что-то пошло не так! Попробуйте ещё раз.";
+  const textLogInFalse = `${props.errorMessage}. Попробуйте ещё раз.`;
   React.useEffect(() => {
     resetValidation({ email: "", password: "" });
   }, []);
