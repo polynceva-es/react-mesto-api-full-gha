@@ -8,6 +8,7 @@ const usersRouter = require('./users');
 const cardsRouter = require('./cards');
 const NotFoundError = require('../errors/notFoundError');
 const errorHandler = require('../middlewares/errorHadler');
+const corsHandler = require('../middlewares/corsHandler');
 
 const {
   name,
@@ -18,7 +19,13 @@ const {
 } = celebrateParams;
 
 appRouter.use(requestLogger); // подключаем логгер запросов
+appRouter.use(corsHandler);
 appRouter.use(bodyParser.json());
+appRouter.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 appRouter.post('/signin', celebrate({
   body: Joi.object().keys({
     email, password,

@@ -36,13 +36,15 @@ function App() {
     if (jwt) {
       checkToken(jwt)
         .then((res) => {
-          const userEmail = res.data.email;
+          const userEmail = res.email;
           setLoggedIn(true);
           setUserEmail(userEmail);
           navigate("/", { replace: true });
         })
-        .catch(() => {
+        .catch((err) => {
+          console.log(err)
           localStorage.removeItem("token");
+          console.log('mesto 1')
           setLoggedIn(false);
         })
         .finally(() => setIsLoader(false));
@@ -177,10 +179,10 @@ function App() {
         setRegedIn(true);
       })
       .catch(() => {
-        setRegedIn(false); 
+        setRegedIn(false);
       })
       .finally(() => {
-        setIsLoader(false); 
+        setIsLoader(false);
         setIsInfoTooltipOpen(true)});
   }
   function onSubmitLogin(values) {
@@ -193,6 +195,7 @@ function App() {
       })
       .catch((err) => {
         err.then((e) => console.log(e.message));
+        console.log('mesto 2');
         setLoggedIn(false)
       })
       .finally(() => {
@@ -200,6 +203,7 @@ function App() {
         setIsInfoTooltipOpen(true)})
   }
   function signOut() {
+    console.log('mesto 3')
     setLoggedIn(false);
     setIsInfoTooltipOpen(false);
     localStorage.removeItem("token");
@@ -260,8 +264,8 @@ function App() {
         <Route
           path="/sign-in"
           element={
-            <Login 
-              loggedIn={loggedIn} 
+            <Login
+              loggedIn={loggedIn}
               onSubmitLogin={onSubmitLogin}
               isOpen={isInfoTooltipOpen}
               onClose={closeAllPopups}
