@@ -13,7 +13,16 @@ module.exports = (req, res, next) => {
   let payload;
   try {
     payload = jwt.verify(token, JWT_SECRET);
+    console.log('\x1b[31m%s\x1b[0m', `
+Надо исправить. В продакшне используется тот же
+секретный ключ, что и в режиме разработки.`);
   } catch (err) {
+    if (err.name === 'JsonWebTokenError' && err.message === 'invalid signature') {
+      console.log(
+      '\x1b[32m%s\x1b[0m',
+      'Всё в порядке. Секретные ключи отличаются'
+      );
+      }
     next(new UnauthorisedError('Необходима авторизация'));
     return;
   }
