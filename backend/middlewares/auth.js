@@ -1,6 +1,5 @@
-require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = process.env;
+const { NODE_ENV, JWT_SECRET } = process.env;
 const UnauthorisedError = require('../errors/unauthorisedError');
 
 module.exports = (req, res, next) => {
@@ -12,20 +11,11 @@ module.exports = (req, res, next) => {
   const token = authorization.replace('Bearer ', '');
   let payload;
   try {
-    payload = jwt.verify(token, JWT_SECRET);
-    console.log('\x1b[31m%s\x1b[0m', `
-Надо исправить. В продакшне используется тот же
-секретный ключ, что и в режиме разработки.`);
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret-key');
   } catch (err) {
-    if (err.name === 'JsonWebTokenError' && err.message === 'invalid signature') {
-      console.log(
-      '\x1b[32m%s\x1b[0m',
-      'Всё в порядке. Секретные ключи отличаются'
-      );
-      }
-    next(new UnauthorisedError('Необходима авторизация'));
-    return;
-  }
+      next(new UnauthorisedError('Необходима авторизация'));
+      return;
+    }
   req.user = payload;
   next();
 };
