@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес <158.160.027.044>
+IP-адрес 158.160.027.044
 
 Frontend https://polyntseva.mesto.nomoredomains.monster
 
